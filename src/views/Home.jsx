@@ -1,17 +1,17 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
-import { Card } from './components/card';
-import MainLayout from './layout/MainLayout';
-import { SearchForm } from './components/SearchForm';
-import { LoadingIndicator } from './components/LoadingIndicator';
+import { Card } from '../components/card';
+import MainLayout from '../layout/MainLayout';
+import { SearchForm } from '../components/SearchForm';
+import { LoadingIndicator } from '../components/LoadingIndicator';
+
+const BASE_URL = import.meta.env.VITE_API_BASE_URI;
 
 export function Home() {
   const [search, setSearch] = useState('');
   const [meals, setMeals] = useState([]);
   const [loading, setLoading] = useState(false);
   const [heading, setHeading] = useState('RandomMeals')
-
-  const BASE_URL = import.meta.env.VITE_API_BASE_URI;
 
   const handleSearch = (query) => {
     setLoading(true);
