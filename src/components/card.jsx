@@ -9,7 +9,9 @@ export function Card({meal}) {
           {meal.strMeal}
         </h2>
         <p className="text-gray-600 text-sm">
-          {meal.strInstructions.slice(0, 100)}
+           {meal.strInstructions
+            ? meal.strInstructions.slice(0, 100) + '...'
+            : 'No instructions available.'}
         </p>
       </div>
     </div>

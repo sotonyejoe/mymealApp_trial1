@@ -8,6 +8,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
       <App />
+      <h1>Helo Vite + React</h1>
     </BrowserRouter>
   </React.StrictMode>
 );

@@ -71,9 +71,11 @@ export function Home() {
           <p className="text-center mt-4 text-gray-600">No meals found.</p>
         ) : (
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-6">
-            {meals.map((meal) => (
-              <Card key={meal.idMeal} meal={meal} />
-            ))}
+            {meals
+            .filter((meal) => meal && meal.idMeal) // Ensure meal and ID exist
+            .map((meal, index) => (
+              <Card key={`${meal.idMeal || index }-${index}`} meal={meal} />
+          ))}
           </div>
         )}
       </div>
